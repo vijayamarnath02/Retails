@@ -1,0 +1,137 @@
+<ion-content class="ion-padding">
+
+  <ion-grid style=" font-family:Poppins,sans-serif;margin-top: 50px;">
+    <ion-row>
+      <ion-col>
+        <ion-card style=" font-family:Poppins, sans-serif;width: 150px;height: 100px;border-radius: 10px;">
+          <ion-card-header>
+            <ion-card-title>Product Count </ion-card-title>
+            <ion-card-subtitle
+              style="justify-content: center;text-align: center;font-style: bold;font-weight: 300px;">{{userCount.products}}</ion-card-subtitle>
+          </ion-card-header>
+
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card style=" font-family:Poppins, sans-serif;width: 150px;height: 100px;border-radius: 10px;">
+          <ion-card-header>
+            <ion-card-title>Shop Count</ion-card-title>
+            <ion-card-subtitle
+              style="justify-content: center;text-align: center;font-style: bold;font-weight: 300px;">{{userCount.shops}}</ion-card-subtitle>
+          </ion-card-header>
+
+
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card style=" font-family:Poppins, sans-serif; width: 150px;height: 100px;border-radius: 10px;">
+          <ion-card-header>
+            <ion-card-title>User Count</ion-card-title>
+            <ion-card-subtitle
+              style="justify-content: center;text-align: center;font-style: bold;font-weight: 300px;">{{userCount.users}}</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card style=" font-family:Poppins, sans-serif;width: 150px;height: 100px;border-radius: 10px;">
+          <ion-card-header>
+            <ion-card-title>Completed Count</ion-card-title>
+            <ion-card-subtitle
+              style="justify-content: center;text-align: center;font-style: bold;font-weight: 300px;">{{userCount.completed}}</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <ion-button [routerLink]="['/detail']"></ion-button>>Login</ion-button>
+  </div> -->
+
+
+  <div style="font-family:Poppins, sans-serif;display: flex ;text-align: center;justify-content: center;">
+    <ion-button (click)="setOpen(true)" style="width: 70%;font-family:Poppins, sans-serif" color="secondary"><ion-icon
+        aria-hidden="true" name="add"></ion-icon>Add New Product</ion-button>
+    <ion-modal [isOpen]="isModalOpen">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-buttons slot="start">
+              <ion-button (click)="setOpen(false)">Cancel</ion-button>
+            </ion-buttons>
+            <ion-title>Add New Product</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="onSubmit()" [strong]="true">Confirm</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <!-- <ion-content class="ion-padding">
+          <form [formGroup]="productForm" class="ion-padding">
+            <div style="margin: 10px;">
+          <ion-input label="Product Name" label-placement="floating" fill="solid" formControlName="productName" placeholder="Enter text Product Name" required></ion-input>
+          </div>
+          <div style="margin: 10px;">
+          <ion-input label="Product Id" label-placement="floating" fill="solid" formControlName="productId" placeholder="Enter text Product Id" required></ion-input>
+          </div>
+          
+          <div style="margin: 10px;">
+          <ion-input label="Product Quantity " label-placement="floating" fill="solid" formControlName="productQuantity" placeholder="Enter text Product Quantity" required></ion-input>
+        </div>
+        <div style="width: 100%;">
+          <ion-list>
+            <ion-item>
+              <ion-select interface="action-sheet" placeholder="Select Product Type" formControlName="productType" >
+        
+                <ion-select-option *ngFor="let item of productData" value={{item._id}} >{{item.Name}}</ion-select-option>
+            
+            
+              </ion-select>
+            </ion-item>
+          </ion-list>
+          </div>
+        </form>
+        <div style="justify-content: center;text-align: center;display: flex;flex-direction: row;">
+          <ion-button color="danger" (click)="setOpen(false)">Cancel</ion-button>
+          <ion-button color="secondary" (click)="onSubmit()">Submit</ion-button>
+        </div>
+        </ion-content> -->
+        <!-- shop-details-form.component.html -->
+        <ion-content class="ion-padding">
+          <form [formGroup]="productForm">
+
+            <ion-item>
+              <ion-label position="stacked">Product Name</ion-label>
+              <ion-input type="text" formControlName="productName" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked">Product ID</ion-label>
+              <ion-input type="text" formControlName="productId" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked">Product Quantity</ion-label>
+              <ion-input type="number" formControlName="productQuantity" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked">Product Type</ion-label>
+              <ion-select formControlName="productType" interface="popover" placeholder="Select Product Type">
+                <ion-select-option *ngFor="let item of productData" value={{item._id}}>{{item.Name}}</ion-select-option>
+
+
+              </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-label position="stacked">Amount</ion-label>
+              <ion-input type="number" formControlName="amount" required></ion-input>
+            </ion-item>
+
+          </form>
+        </ion-content>
+
+      </ng-template>
+    </ion-modal>
+
+  </div>
+
+</ion-content>

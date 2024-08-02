@@ -1,0 +1,44 @@
+<ion-content class="ion-padding ion-content-center">
+  <div class="avatar-icon">
+    <h1
+      style="display: flex;justify-content: center;text-align: center;font-size: 40px; font-family: Poppins, sans-serif;">
+      Login</h1>
+    <form [formGroup]="loginForm">
+      <div class="input-container">
+
+        <ion-input type="email" fill="solid" label="Email" labelPlacement="floating" errorText="Invalid email"
+          name="email" formControlName="email"></ion-input>
+      </div>
+      <div class="input-container">
+        <ion-input type="password" fill="solid" label="password" labelPlacement="floating" errorText="Invalid password"
+          name="password" formControlName="password"></ion-input>
+
+      </div>
+    </form>
+  </div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button shape="round" color="secondary">Cancel</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button shape="round" color="secondary" (click)="submitForm()">Login</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col style="font-family: Poppins, sans-serif;">
+        <p style="display: flex;justify-content: center;">Create a <a
+            style="margin-left:5px;color:#0c3b2E;font-weight: 100px;" [routerLink]="['/signup']">new user.?</a></p>
+      </ion-col>
+
+    </ion-row>
+    <ion-row>
+      <ion-col style="font-family: Poppins, sans-serif;">
+        <p style="display: flex;justify-content: center;">Forget <a
+            style="margin-left:5px;color:#0c3b2E;font-weight: 100px;">Password</a></p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-toast [isOpen]="isToastOpen" message={{message}} [duration]="5000" (didDismiss)="setOpen(false)"></ion-toast>

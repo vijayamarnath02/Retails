@@ -1,0 +1,32 @@
+<ion-content class="ion-padding">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <ion-item class="main">
+      <ion-select formControlName="product" label="Product List" placeholder="Select Product Any"
+        (ionChange)="onChange($event)">
+        <ion-select-option *ngFor="let option of productData" [value]="option._id">
+          {{ option.name }}
+        </ion-select-option>
+      </ion-select>
+
+
+    </ion-item>
+    <ion-item *ngIf="isSelected">
+      <ion-chip>Quantity:{{dummy.qty}}</ion-chip><ion-chip>Amount:{{dummy.amount}}</ion-chip>
+    </ion-item>
+    <ion-item>
+      <ion-input formControlName="quantity" type="number" label="Quantity" (keyup)="checktheValue($event)"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input formControlName="total" type="number" label="Total" readonly></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox labelPlacement="end" formControlName="gst">Add Gst For This Bill 18%</ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox labelPlacement="end" formControlName="delivery">Add Deleviry Charage </ion-checkbox>
+    </ion-item>
+    <ion-button expand="full" type="submit">Submit</ion-button>
+  </form>
+  <ion-toast [isOpen]="isToastOpen" message="Please Enter Limited quantity" [duration]="5000"
+    (didDismiss)="setOpen(false)"></ion-toast>
+</ion-content>

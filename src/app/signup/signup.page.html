@@ -1,0 +1,44 @@
+<ion-content class="ion-padding ion-content-center">
+  <div class="avatar-icon">
+    <h1
+      style="display: flex;justify-content: center;text-align: center;font-size: 40px; font-family: Poppins, sans-serif;">
+      SignUp</h1>
+    <form [formGroup]="signupForm">
+      <div class="input-container">
+        <ion-input type="text" fill="solid" label="Name" labelPlacement="floating" errorText="Invalid Name" name="name"
+          formControlName="name"></ion-input>
+      </div>
+      <div class="input-container">
+        <ion-input type="tel" fill="solid" label="Mobile" labelPlacement="floating" errorText="Invalid Mobile Number"
+          name="mobile" formControlName="mobile"></ion-input>
+      </div>
+      <div class="input-container">
+        <ion-input type="email" fill="solid" label="Email" labelPlacement="floating" errorText="Invalid email"
+          name="email" formControlName="email"></ion-input>
+      </div>
+      <div class="input-container">
+        <ion-input type="password" fill="solid" label="Password" labelPlacement="floating" errorText="Invalid password"
+          name="password" formControlName="password"></ion-input>
+      </div>
+    </form>
+  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button shape="round" color="secondary">Cancel</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button shape="round" color="secondary" (click)="submitForm()">SignUp</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col style="font-family: Poppins, sans-serif;">
+        <p style="display: flex;justify-content: center;">Already have a <a
+            style="margin-left:5px;color:#0c3b2E;font-weight: 100px;" [routerLink]="['/login']">Account</a></p>
+      </ion-col>
+
+    </ion-row>
+
+  </ion-grid>
+  <ion-toast [isOpen]="isToastOpen" message={{error}} [duration]="5000" (didDismiss)="setOpen(false)"></ion-toast>
+</ion-content>

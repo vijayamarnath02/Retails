@@ -1,0 +1,23 @@
+ion-content{
+    // --ion-color-success: #0c3b2E;
+   
+    .avatar-icon{
+        margin-top: 65%;
+    }
+    ion-input{
+        border-radius: 10px;
+        font-family: "Poppins", "sans-serif";
+        padding: 10px !important;
+        --ion-color-success: #0c3b2E;
+    }
+    ion-button{
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        --ion-color-secondary: #0c3b2E;
+        font-family: "Poppins", "sans-serif";
+    }
+
+}
+
+  

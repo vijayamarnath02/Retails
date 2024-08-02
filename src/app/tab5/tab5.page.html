@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Billing Summary</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card class="invoice-card">
+    <ion-card-header>
+      <ion-card-title>Invoice</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="invoice-container">
+        <!-- Left Side: Company and Biller Information -->
+        <div class="info-column">
+          <div class="info-section">
+            <h2>Company Details</h2>
+            <p><strong>Company Name:</strong> {{ companyAddress.name }}</p>
+            <p><strong>Street:</strong> {{ companyAddress.street }}</p>
+            <p><strong>City:</strong> {{ companyAddress.city }}</p>
+            <p><strong>State:</strong> {{ companyAddress.state }}</p>
+            <p><strong>Zip Code:</strong> {{ companyAddress.zip }}</p>
+          </div>
+
+          <div class="info-section">
+            <h2>Biller Details</h2>
+            <p><strong>Biller Name:</strong> {{ billerAddress.name }}</p>
+            <p><strong>Street:</strong> {{ billerAddress.street }}</p>
+            <p><strong>City:</strong> {{ billerAddress.city }}</p>
+            <p><strong>State:</strong> {{ billerAddress.state }}</p>
+            <p><strong>Zip Code:</strong> {{ billerAddress.zip }}</p>
+          </div>
+        </div>
+
+        <!-- Right Side: Billing Details -->
+        <div class="info-column">
+          <div class="info-section">
+            <h2>Billing Details</h2>
+            <div class="billing-item">
+              <p><strong>Product Name:</strong> {{ billingDetail.ProductId }}</p>
+              <p><strong>Quantity:</strong> {{ billingDetail.quanity }}</p>
+              <p><strong>Total:</strong> {{ billingDetail.amount }}</p>
+              <p><strong>GST:</strong><span *ngIf="billingDetail.gst">{{ billingDetail.amount * 0.18 | number:'1.2-2'
+                  }}</span>
+                <span *ngIf="!billingDetail.gst">Not applied</span>
+              </p>
+              <p><strong>Delivery Charge:</strong><span *ngIf="billingDetail.delivery">200</span>
+                <span *ngIf="!billingDetail.delivery">Not applied</span>
+
+              </p>
+              <p><strong>Total including GST and delivery:</strong> {{ total }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

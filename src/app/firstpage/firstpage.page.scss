@@ -1,0 +1,44 @@
+ion-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh !important; 
+    
+    .avatar-icon {
+      margin-top: 40%; 
+      height: 200px;
+      border-radius: 50%;
+   margin-bottom: 100px;
+    }
+    
+    ion-grid {
+      text-align: center;
+      
+      ion-row {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px; 
+        
+        
+      }
+      ion-button{
+        width: 80%;
+        --ion-color-secondary: #0c3b2E;
+        font-family: "Poppins", sans-serif;
+
+      }
+      .avatar-icon {
+      
+       
+        
+        .logo-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover; 
+        }
+      }
+    }
+
+  }
+  

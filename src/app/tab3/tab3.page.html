@@ -1,0 +1,96 @@
+<ion-content class="ion-padding">
+  <div style="font-family:Poppins, sans-serif;display: flex ;text-align: center;justify-content: center;">
+    <ion-button id="open-modal" expand="block" style="width: 70%;font-family:Poppins, sans-serif;margin-top:50px ;"
+      color="secondary"><ion-icon aria-hidden="true" name="add"></ion-icon>Add New Owner</ion-button>
+    <ion-modal trigger="open-modal">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-buttons slot="start">
+              <ion-button (click)="cancel()">Cancel</ion-button>
+            </ion-buttons>
+            <ion-title>Shop Owner Details</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <!-- shop-details-form.component.html -->
+        <ion-content padding>
+          <form [formGroup]="shopDetailsForm">
+            <ion-item>
+              <ion-label position="stacked">Name</ion-label>
+              <ion-input type="text" formControlName="name" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="stacked">Shop Name</ion-label>
+              <ion-input type="text" formControlName="shopName" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked">Address</ion-label>
+              <ion-textarea formControlName="address" required></ion-textarea>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked">GST Number</ion-label>
+              <ion-input type="text" formControlName="gstNumber"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked">Mobile</ion-label>
+              <ion-input type="tel" formControlName="mobile" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked">Email</ion-label>
+              <ion-input type="email" formControlName="email" required></ion-input>
+            </ion-item>
+
+
+
+            <ion-item>
+              <ion-label position="stacked">State</ion-label>
+              <ion-input type="text" formControlName="state" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked">Country</ion-label>
+              <ion-input type="text" formControlName="country" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked">Pincode</ion-label>
+              <ion-input type="text" formControlName="pincode" required></ion-input>
+            </ion-item>
+
+
+          </form>
+        </ion-content>
+
+      </ng-template>
+
+    </ion-modal>
+  </div>
+  <h4 style="font-family:Poppins, sans-serif">Shop Owner Details</h4>
+  <ion-searchbar animated="true" placeholder="Search By Shop Name" (ionInput)="onSearch($event)"></ion-searchbar>
+
+  <ion-list>
+    <ion-item *ngFor="let product of productlist;index as i">
+      <ion-label>
+        <div
+          style="display: flex;flex-direction: row;padding: 20px;justify-content: space-between;align-items: center;text-align: center;">
+          <h6>{{i+1}}</h6>
+          <p>{{ product.name }}</p>
+          <p>{{product.shopName}}</p>
+          <p>{{product.mobile}}</p>
+          <p>{{product.statex}}</p>
+          <ion-button (click)="setOpen(product._id)">Add</ion-button>
+
+        </div>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+
+</ion-content>

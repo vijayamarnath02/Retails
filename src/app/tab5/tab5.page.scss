@@ -1,0 +1,61 @@
+ion-card {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.invoice-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+}
+
+.invoice-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.info-column {
+    flex: 1;
+    min-width: 300px;
+    /* Adjust as needed */
+    margin-right: 20px;
+    /* Space between columns */
+}
+
+.info-column:last-child {
+    margin-right: 0;
+    /* Remove margin for the last column */
+}
+
+.info-section {
+    margin-bottom: 20px;
+}
+
+.info-section h2 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.info-section p {
+    margin: 4px 0;
+    font-size: 1em;
+    color: #555;
+}
+
+.billing-item {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 10px;
+}
+
+.billing-item p {
+    margin: 4px 0;
+    font-size: 1em;
+    color: #333;
+}
+
+strong {
+    color: #000;
+}

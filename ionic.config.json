@@ -1,0 +1,7 @@
+{
+  "name": "RetailShop",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
